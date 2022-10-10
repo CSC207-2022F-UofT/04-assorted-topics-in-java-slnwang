@@ -24,7 +24,7 @@ public class DrivableTrader extends Trader<Drivable>{
      * @param wishlist  Objects in this Trader's wishlist
      * @param money     The Trader's money
      */
-    public DrivableTrader(List inventory, List wishlist, int money) {
+    public DrivableTrader(List<Drivable> inventory, List<Drivable> wishlist, int money) {
         super(inventory, wishlist, money);
         this.money = money;
     }
@@ -40,9 +40,8 @@ public class DrivableTrader extends Trader<Drivable>{
     public int getSellingPrice(Drivable item){
          if(item instanceof Tradable){
              return super.getSellingPrice(item) + item.getMaxSpeed();
-         } else {
-             return Tradable.MISSING_PRICE;
          }
+         return Tradable.MISSING_PRICE;
     }
 
     public boolean exchangeMoney(DrivableTrader other, Drivable item){
@@ -59,7 +58,7 @@ public class DrivableTrader extends Trader<Drivable>{
 
     public boolean sellTo(DrivableTrader other){
         boolean sold_once = false;
-        ArrayList<Drivable> items_sold = new ArrayList<>();
+        List<Drivable> items_sold = new ArrayList<>();
 
         for(Drivable item : this.getInventory()){
             if (other.getWishlist().contains(item) && exchangeMoney(other, item)) {
@@ -91,7 +90,5 @@ public class DrivableTrader extends Trader<Drivable>{
 
         return details.toString();
     }
-
-
 
 }

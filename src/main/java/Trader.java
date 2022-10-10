@@ -46,11 +46,6 @@ public class Trader<T> {
         this.money = money;
     }
 
-    public int getMoney(){
-        return this.money;
-    }
-
-
     /* TODO: Implement the method addToWishlist that takes an
      *       object of type T and adds it to this Trader's wishlist.
      */

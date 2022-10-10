@@ -43,7 +43,7 @@ class DrivableMap {
      * iterate through drivable_map.
      */
     public boolean hasFasterThan(int speed){
-        for (Drivable d: drivable_map.values()){
+        for (Drivable d : drivable_map.values()){
             if (speed <= d.getMaxSpeed()){
                 return true;
             }
