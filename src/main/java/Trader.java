@@ -49,7 +49,7 @@ public class Trader<T> {
     /* TODO: Implement the method addToWishlist that takes an
      *       object of type T and adds it to this Trader's wishlist.
      */
-    public void addToWishList(T item){
+    public void addToWishlist(T item){
         this.wishlist.add(item);
     }
 
